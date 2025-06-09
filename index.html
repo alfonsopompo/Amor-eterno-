@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación de Matrimonio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: url('https://previews.123rf.com/images/essl/essl1901/essl190100026/126237299-flowers-decorative-background-vertical-floral-pattern-with-lilie.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      padding: 3rem 1rem;
+      backdrop-filter: brightness(1);
+      text-align: center; /* Para centrar los bloques */
+    }
+
+    .invitacion {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+      padding: 3rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      color: #333;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+      letter-spacing: 0.3em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nombres {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin: 0 0 1.5rem 0;
+      color: #555;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    /* Cada párrafo justificado pero dentro de un contenedor centrado */
+    .texto-principal, .fecha-hora, .ubicacion, .regalos, .confirmacion, .cita-biblica, .cuenta {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+    }
+
+    .fecha-hora p:first-child, .ubicacion p:first-child, .regalos p:first-child, .confirmacion p:first-child {
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    .fecha-estilizada {
+      text-align: center;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .numero {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #a85c4a;
+      font-family: 'Great Vibes', cursive;
+      line-height: 1;
+    }
+
+    .mes {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: #7b4e3c;
+      letter-spacing: 0.1em;
+      font-family: Georgia, serif;
+      margin-top: -0.3rem;
+    }
+
+    a {
+      color: #a85c4a;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #bb7a66;
+      text-decoration: underline;
+    }
+
+    .cita-biblica {
+      font-style: italic;
+      margin-top: 3rem;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Modal para regalos */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      color: #333;
+      font-family: Georgia, serif;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #a85c4a;
+      text-align: center;
+    }
+
+    .cerrar {
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #a85c4a;
+    }
+
+    .modal-content ul {
+      padding-left: 1.2rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .modal-content ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .cuenta p {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    #countdown {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="invitacion">
+    <h1>¡NOS CASAMOS!</h1>
+    <p class="nombres">Alfonso &amp; Karin</p>
+
+    <p class="texto-principal">
+      Después de más de una década y 3 años de novios, decidimos formalizar nuestro amor y comenzar este nuevo viaje juntos.<br />
+      ¡Queremos celebrarlo contigo!
+    </p>
+
+    <div class="fecha-hora">
+      <p>Cuándo:</p>
+      <div class="fecha-estilizada">
+        <div class="numero">15</div>
+        <div class="mes">enero</div>
+      </div>
+      <p>
+        10:00 AM - Llegada<br />
+        11:00 AM - Ceremonia
+      </p>
+    </div>
+
+    <div class="ubicacion">
+      <p>Dónde:</p>
+      <a href="https://maps.app.goo.gl/HytPkc6jPrknAXCHA" target="_blank" rel="noopener noreferrer">
+        Sede Vecinal Los Naranjos, San Javier, Maule
+      </a>
+    </div>
+
+    <div class="regalos">
+      <p>
+        <a id="abrirRegalos" href="javascript:void(0);">Sugerencias de regalos</a><br />
+        Nuestro regalo más grande es tu presencia, pero si deseas apoyar de otra forma, aquí te damos algunas ideas.
+      </p>
+    </div>
+
+    <div class="confirmacion">
+      <p>
+        <a href="https://wa.me/56987981520?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20su%20matrimonio.%20¡Estoy%20muy%20feliz%20de%20acompañarlos%20en%20este%20gran%20día%21" target="_blank" rel="noopener noreferrer">
+          Nos gustaría que confirmaras tu asistencia
+        </a>
+      </p>
+    </div>
+
+    <div class="cuenta">
+      <p>Faltan:</p>
+      <div id="countdown">Cargando cuenta regresiva...</div>
+    </div>
+
+    <div class="cita-biblica">
+      <p>“...y serán una sola carne.” — Génesis 2:24</p>
+    </div>
+  </div>
+
+  <div id="modalRegalos" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" id="cerrarModal">&times;</span>
+      <h2>Sugerencias de regalos</h2>
+      <ul>
+        <li>Un sobre con dinero</li>
+        <li>Transferencia bancaria a la cuenta: 1234 5678 9012 3456</li>
+        <li>Donación para nuestro viaje de bodas</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Cuenta regresiva
+    const evento = new Date("2026-01-15T11:00:00");
+    const countdownEl = document.getElementById("countdown");
+
+    function actualizarCuentaRegresiva() {
+      const ahora = new Date();
+      const diferencia = evento - ahora;
+
+      if (diferencia <= 0) {
+        countdownEl.textContent = "¡El gran día ha llegado!";
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
+    }
+
+    setInterval(actualizarCuentaRegresiva, 1000);
+    actualizarCuentaRegresiva();
+
+    // Modal regalos
+    const modal = document.getElementById("modalRegalos");
+    const abrir = document.getElementById("abrirRegalos");
+    const cerrar = document.getElementById("cerrarModal");
+
+    abrir.onclick = () => { modal.style.display = "block"; }
+    cerrar.onclick = () => { modal.style.display = "none"; }
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
